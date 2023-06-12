@@ -21,6 +21,12 @@
       background-color: #F4F4F2;
     }
 
+    .pontos {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
     .main {
       width: 100%;
       height: 100%;
@@ -47,6 +53,7 @@
       width: 100%;
       height: auto;
 
+      margin-top: 30px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -66,9 +73,9 @@
       justify-content: end;
     }
 
-    .logo {
+    .logo,
+    .logo-pontos {
       max-width: 150px;
-      margin-bottom: 30px;
     }
 
     .logo-footer {
@@ -118,6 +125,11 @@
 </head>
 
 <body class="fundo">
+
+  <header class="pontos">
+    <img src="pontos.png" alt="Logo pontos" class="logo-pontos">
+  </header>
+
   <main class="main">
     <div class="container">
       <img src="01.png" alt="Dovale Chaves" class="logo">
