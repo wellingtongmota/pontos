@@ -7,174 +7,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Tela de Consulta</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-    }
-
-    .fundo {
-      z-index: 0;
-      width: 100%;
-      height: 100vh;
-      background-color: #F4F4F2;
-    }
-
-    .desenho {
-      z-index: 1;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: auto;
-      height: 99vh;
-    }
-
-    .desenho-img {
-      width: auto;
-      height: 100%;
-    }
-
-    .pontos {
-      z-index: 2;
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-    }
-
-    .main {
-      width: 100%;
-      height: 100%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .container {
-      z-index: 2;
-      width: 580px;
-      height: auto;
-      padding: 40px;
-      background-color: #FFF;
-      border-radius: 10px;
-      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .form {
-      width: 100%;
-      height: auto;
-
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .footer {
-      z-index: 2;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 10rem;
-
-      /* display: flex;
-      flex-direction: column; */
-    }
-
-    .linha-amarela {
-      width: 100%;
-      height: 5%;
-      background-image: linear-gradient(to right, #ffd341, #f8c140, #ffd341);
-    }
-
-    .linha-azul {
-      width: 100%;
-      height: 95%;
-      background-image: linear-gradient(to right, #393668, #3b4591, #393668);
-      padding: 1rem;
-
-      display: flex;
-      align-items: center;
-      justify-content: end;
-    }
-
-    .logo,
-    .logo-pontos {
-      max-width: 150px;
-    }
-
-    .logo-footer {
-      width: auto;
-      max-width: 90%;
-      max-height: 60%;
-    }
-
-    .textbox {
-      min-width: 250px;
-      padding: 10px;
-    }
-
-    .button {
-      min-width: 150px;
-      padding: 10px 20px;
-      background-color: #0663f0;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    .button:hover {
-      background-color: #3b4591;
-      transition: .3s;
-    }
-
-    .container,
-    .textbox,
-    .button {
-      border-radius: 10px;
-      margin: 10px;
-    }
-
-    @media screen and (max-width: 548px) {
-      .container {
-        width: 100%;
-        margin: 10px;
-      }
-
-      .linha-azul {
-        justify-content: center;
-      }
-
-      .textbox,
-      .button {
-        width: 100%;
-      }
-    }
-  </style>
 </head>
 
 <body class="fundo">
 
   <header class="pontos">
-    <img src="pontos.png" alt="Logo pontos" class="logo-pontos">
+    <img src="images/pontos.png" alt="Logo pontos" class="logo-pontos">
   </header>
 
   <div class="desenho">
-    <img src="fundo.png" alt="" class="desenho-img">
+    <img src="images/fundo.png" alt="" class="desenho-img">
   </div>
 
   <main class="main">
     <div class="container">
-      <img src="01.png" alt="Dovale Chaves" class="logo">
+      <img src="images/logo.png" alt="Dovale Chaves" class="logo">
 
       <div class="form">
         <input id="cpfcnpj" type="text" class="textbox" placeholder="Digite seu CPF ou CNPJ">
@@ -188,28 +37,11 @@
   <footer class="footer">
     <div class="linha-amarela"></div>
     <div class="linha-azul">
-      <img src="logo_footer.png" alt="Logo rodapé" class="logo-footer">
+      <img src="images/logo_footer.png" alt="Logo rodapé" class="logo-footer">
     </div>
   </footer>
 
-  <script>
-    function buscarPontos() {
-      const valorCpf = document.getElementById('cpfcnpj').value;
-      const url = `https://api.dovale.com.br/ConsultaPontos?Cliente=${valorCpf}`;
-
-      fetch(url)
-        .then(res => res.json())
-        .then(result => {
-          exibirRetorno(result)
-        });
-
-      function exibirRetorno(data) {
-        const dadosResult = document.getElementById('resultado');
-        dadosResult.textContent = `${JSON.stringify(data)}`;
-      }
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 
 </html>
