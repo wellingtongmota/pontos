@@ -1,4 +1,4 @@
-<!-- Author: Paul Moraes, Wellington Galvão -->
+<!-- Authors: Paul Moraes, Wellington Galvão -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,7 +18,7 @@
   </header>
 
   <div class="desenho">
-    <img src="images/fundo.png" alt="" class="desenho-img">
+    <img src="images/fundo.png" class="desenho-img">
   </div>
 
   <main class="main">
@@ -26,8 +26,10 @@
       <img src="images/logo.png" alt="Dovale Chaves" class="logo">
 
       <div class="form">
-        <input id="cpfcnpj" type="text" class="textbox" placeholder="Digite seu CPF ou CNPJ">
-        <button class="button" onclick="buscarPontos()">Consultar</button>
+        <form>
+          <input id="cpfcnpj" type="text" placeholder="Digite seu CPF ou CNPJ" required>
+          <button id="button" type="submit" onsubmit="buscarPontos()">Consultar</button>
+        </form>
       </div>
 
       <p id="resultado"></p>
