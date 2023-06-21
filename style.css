@@ -61,8 +61,6 @@
 .form {
   width: 100%;
   height: auto;
-
-  margin-top: 30px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -105,11 +103,15 @@
   max-height: 60%;
 }
 
-.texto{
-  margin-top: 30px;
-  margin-bottom: -33px;
-  margin-right: 193px;
-  }
+.texto {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem 0px .5rem 0;
+}
+.texto p {
+  font-size: 1.2rem;
+}
 
 input {
   min-width: 250px;
