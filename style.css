@@ -105,6 +105,12 @@
   max-height: 60%;
 }
 
+.texto{
+  margin-top: 30px;
+  margin-bottom: -33px;
+  margin-right: 193px;
+  }
+
 input {
   min-width: 250px;
   padding: 10px;
